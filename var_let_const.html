@@ -6,7 +6,45 @@
     <title>Var let Const html page </title>
 </head>
 <body>
-    
+    <script>
+        // global scope
+        var x=101;
+        let y=102;
+        const z=103;
+        function scopeExample()
+        {
+            var x = 40 ;//fuction scope 
+            let y = 50;//block scope 
+            const z = 3;//block
+
+            if (true)
+            {
+                var x= 10; //ressign x function scoped 
+                let y= 20;//y only for this block
+                const z = 30;//z only for this block
+
+                document.write(x);//10
+                 document.write(y);//20
+                  document.write(z);//30
+                   document.write("<br>");// 10 20 30 
+
+            }
+            //outside tye block inside the function 
+            document.write(x);//10
+                 document.write(y);//20
+                  document.write(z);//3
+                   document.write("<br>");// 10 2 3
+
+
+        }
+        //cal function 
+        scopeExample();
+         document.write(x);
+                 document.write(y);
+                  document.write(z);
+        
+        
+    </script>
     
 </body>
 </html>
