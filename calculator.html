@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Calculator</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .calculator {
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .btn-square {
+      width: 45px;
+      height: 45px;
+      font-size: 18px;
+      
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <form action="" name="myform">
+      <div class="calculator bg-light">
+      <h4 class="text-center mb-4"> Calculator</h4>
+      
+      <div class="mb-3">
+        <label for="n1" class="form-label">Num1:</label>
+        <input type="number" class="form-control" name="n1">
+      </div>
+
+      <div class="mb-3">
+        <label for="n2" class="form-label">Num2:</label>
+        <input type="number" class="form-control" name="n2">
+      </div>
+
+      <div class="d-flex justify-content-center mb-3">
+        <button class="btn btn-success btn-square" type="button" onclick="add()">+</button>
+        <button class="btn btn-success btn-square" type="button" onclick="sub()">-</button>
+        <button class="btn btn-success btn-square" type="button" onclick="multi()">*</button>
+        <button class="btn btn-success btn-square" type="button" onclick="div()">/</button>
+        <button class="btn btn-danger btn-square reset-b" type="reset">C</button>
+      </div>
+
+      <div class="mb-3">
+        <label for="result" class="form-label">Result:</label>
+        <input type="text" class="form-control" id="result" readonly>
+      </div>
+    </div>
+    </form>
+  </div>
+
+  <script>
+    var a,b,result;
+
+    function add()
+    {
+      a=Number(document.myform.n1.value);
+      b=Number(document.myform.n2.value);
+      result=a+b;
+
+      document.myform.result.value=result.toFixed(4);
+    }
+
+    function sub()
+    {
+      a=Number(document.myform.n1.value);
+      b=Number(document.myform.n2.value);
+      result=a-b;
+
+      document.myform.result.value=result.toFixed(4);
+    }
+
+    function multi()
+    {
+      a=Number(document.myform.n1.value);
+      b=Number(document.myform.n2.value);
+      result=a*b;
+
+      document.myform.result.value=result.toFixed(4);
+    }
+
+    function div()
+    {
+      a=Number(document.myform.n1.value);
+      b=Number(document.myform.n2.value);
+      result=a/b;
+
+      document.myform.result.value=result.toFixed(4);
+    }
+    
+  </script>
+
+</body>
+</html>
